@@ -1,0 +1,17 @@
+1, Dependence:
+    python2.x >= 2.6, not tested in python3
+
+2, How to run it.
+    1. cd streamclient
+    2. fill the access_key and access_secret that get from http://console.acrcloud.com into client.conf file
+    4. #python stream.py
+	or 
+       #nohup python stream.py > stream.log 2>&1 &
+
+3, How to update/add stream url
+    1, update/add stream url to http://cosole.acrcloud.com
+    2, kill stream.py process in your server. (#ps -ef | grep stream.py | grep -v grep | awk '{print $2}'| xargs kill -9)
+    3, restart the stream.py 
+	#python stream.py 
+	 or 
+	#nohup python stream.py > stream.log 2>&1 &
