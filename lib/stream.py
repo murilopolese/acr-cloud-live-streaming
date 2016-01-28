@@ -167,8 +167,8 @@ def parse_config():
             DEBUG = True
         else:
             DEBUG = False
-        config['access_key'] = initconfig['access_key']
-        config['access_secret'] = initconfig['access_secret']
+        config['access_key'] = os.getenv('ACCESS_KEY', initconfig['access_key'])
+        config['access_secret'] = os.getenv('ACCESS_SECRET', initconfig['access_secret'])
         config['remote'] = initconfig.get('remote')
         if initconfig.get('remote'):
             get_remote_config()
@@ -203,4 +203,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
